@@ -1,0 +1,56 @@
+###sc1
+GET http://localhost:3002/todos/?search_q=Play
+
+###sc2
+GET http://localhost:3002/todos/?priority=LOW
+
+###sc3
+
+GET http://localhost:3002/todos/?status=IN%20PROGRESS&priority=HIGH
+
+###sc4
+GET http://localhost:3002/todos/?status=TO%20DO
+
+####API2
+GET http://localhost:3002/todos/1/
+
+###API3
+
+POST http://localhost:3002/todos/
+Content-Type: application/json
+
+
+{
+  "id": 10,
+  "todo": "Finalize event theme",
+  "priority": "LOW",
+  "status": "TO DO"
+}
+
+
+###API4
+
+###sc1
+PUT http://localhost:3002/todos/1/
+Content-Type: application/json
+
+{ "status": "DONE" }
+
+###sc2
+
+PUT http://localhost:3002/todos/1/
+Content-Type: application/json
+
+{ "priority": "HIGH" }
+
+####sc3
+
+PUT http://localhost:3002/todos/1/
+Content-Type: application/json
+
+{ "todo": "Some task" }
+
+
+###API5
+
+DELETE http://localhost:3002/todos/4/
